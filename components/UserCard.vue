@@ -1,13 +1,13 @@
 <script setup>
-import { computed, ref } from "vue";
-import { useMainStore } from "@/stores/main";
-import { mdiCheckDecagram } from "@mdi/js";
+import { computed, ref } from 'vue'
+import { useMainStore } from '@/stores/main'
+import { mdiCheckDecagram } from '@mdi/js'
 
-const mainStore = useMainStore();
+const mainStore = useMainStore()
 
-const userName = computed(() => mainStore.userName);
+const userName = computed(() => mainStore.userName)
 
-const userSwitchVal = ref(false);
+const userSwitchVal = ref(false)
 </script>
 
 <template>

@@ -1,22 +1,22 @@
 <script setup>
-import { ref } from "vue";
-import { mdiClose, mdiDotsVertical } from "@mdi/js";
-import { containerMaxW } from '@/configs/config.js';
+import { ref } from 'vue'
+import { mdiClose, mdiDotsVertical } from '@mdi/js'
+import { containerMaxW } from '@/configs/config'
 
 defineProps({
   menu: {
     type: Array,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 
-const emit = defineEmits(["menu-click"]);
+const emit = defineEmits(['menu-click'])
 
 const menuClick = (event, item) => {
-  emit("menu-click", event, item);
-};
+  emit('menu-click', event, item)
+}
 
-const isMenuNavBarActive = ref(false);
+const isMenuNavBarActive = ref(false)
 </script>
 
 <template>
@@ -28,13 +28,8 @@ const isMenuNavBarActive = ref(false);
         <slot />
       </div>
       <div class="flex-none items-stretch flex h-14 lg:hidden">
-        <NavBarItemPlain
-          @click.prevent="isMenuNavBarActive = !isMenuNavBarActive"
-        >
-          <BaseIcon
-            :path="isMenuNavBarActive ? mdiClose : mdiDotsVertical"
-            size="24"
-          />
+        <NavBarItemPlain @click.prevent="isMenuNavBarActive = !isMenuNavBarActive">
+          <BaseIcon :path="isMenuNavBarActive ? mdiClose : mdiDotsVertical" size="24" />
         </NavBarItemPlain>
       </div>
       <div

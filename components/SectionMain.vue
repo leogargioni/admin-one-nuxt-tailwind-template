@@ -1,5 +1,5 @@
 <script setup>
-import { containerMaxW } from '@/configs/config.js';
+import { containerMaxW } from '@/configs/config'
 </script>
 
 <template>

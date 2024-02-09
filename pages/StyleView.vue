@@ -1,49 +1,45 @@
 <script setup>
-import { useStyleStore } from "@/stores/style.js";
-import { gradientBgPurplePink } from "@/configs/colors.js";
+import { useDarkModeStore } from '@/stores/darkMode.js'
+import { gradientBgPurplePink } from '@/configs/colors'
 
-const styles = ["white", "basic"];
+const styles = ['white', 'basic']
 
-const styleStore = useStyleStore();
+const darkModeStore = useDarkModeStore()
 
-styleStore.setDarkMode(false);
+darkModeStore.set(false)
 
-const router = useRouter();
+const router = useRouter()
 
-const click = (slug) => {
-  styleStore.setStyle(slug);
-  router.push("/dashboard");
-};
+const handleStyleChange = (slug) => {
+  document.documentElement.classList.forEach((token) => {
+    if (token.indexOf('style') === 0) {
+      document.documentElement.classList.replace(token, `style-${slug}`)
+    }
+  })
+
+  router.push('/HomeView')
+}
 </script>
 
 <template>
   <div>
     <NuxtLayout>
-      <div
-        :class="gradientBgPurplePink"
-        class="flex min-h-screen items-center justify-center"
-      >
+      <div :class="gradientBgPurplePink" class="flex min-h-screen items-center justify-center">
         <SectionMain>
-          <h1
-            class="text-4xl md:text-5xl text-center text-white font-bold mt-12 mb-3 lg:mt-0"
-          >
+          <h1 class="text-4xl md:text-5xl text-center text-white font-bold mt-12 mb-3 lg:mt-0">
             Pick a style&hellip;
           </h1>
           <h2 class="text-xl md:text-xl text-center text-white mb-12">
             Style switching with a single
-            <code class="px-1.5 py-0.5 rounded bg-white bg-opacity-20"
-              >action()</code
-            >
+            <code class="px-1.5 py-0.5 rounded bg-white bg-opacity-20">modifier</code>
           </h2>
-          <div
-            class="grid gap-6 grid-cols-1 lg:grid-cols-2 px-6 max-w-6xl mx-auto"
-          >
+          <div class="grid gap-6 grid-cols-1 lg:grid-cols-2 px-6 max-w-6xl mx-auto">
             <CardBox
               v-for="style in styles"
               :key="style"
               class="cursor-pointer bg-gray-50"
               is-hoverable
-              @click="click(style)"
+              @click="handleStyleChange(style)"
             >
               <div class="mb-3 md:mb-6">
                 <img

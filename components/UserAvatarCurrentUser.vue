@@ -1,7 +1,7 @@
 <script setup>
-import { useMainStore } from "@/stores/main";
+import { useMainStore } from '@/stores/main'
 
-const mainStore = useMainStore();
+const mainStore = useMainStore()
 </script>
 
 <template>

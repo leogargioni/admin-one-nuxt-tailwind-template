@@ -10,70 +10,77 @@ import {
   mdiTelevisionGuide,
   mdiResponsive,
   mdiPalette,
-} from "@mdi/js";
+  mdiReact
+} from '@mdi/js'
 
 export default [
   {
-    to: "/dashboard",
+    to: '/HomeView',
     icon: mdiMonitor,
-    label: "Dashboard",
+    label: 'Dashboard'
   },
   {
-    to: "/tables",
-    label: "Tables",
-    icon: mdiTable,
+    to: '/TablesView',
+    label: 'Tables',
+    icon: mdiTable
   },
   {
-    to: "/forms",
-    label: "Forms",
-    icon: mdiSquareEditOutline,
+    to: '/FormsView',
+    label: 'Forms',
+    icon: mdiSquareEditOutline
   },
   {
-    to: "/ui",
-    label: "UI",
-    icon: mdiTelevisionGuide,
+    to: '/UiView',
+    label: 'UI',
+    icon: mdiTelevisionGuide
   },
   {
-    to: "/responsive",
-    label: "Responsive",
-    icon: mdiResponsive,
+    to: '/ResponsiveView',
+    label: 'Responsive',
+    icon: mdiResponsive
   },
   {
-    to: "/styles",
-    label: "Styles",
-    icon: mdiPalette,
+    to: '/StyleView',
+    label: 'Styles',
+    icon: mdiPalette
   },
   {
-    to: "/profile",
-    label: "Profile",
-    icon: mdiAccountCircle,
+    to: '/ProfileView',
+    label: 'Profile',
+    icon: mdiAccountCircle
   },
   {
-    to: "/",
-    label: "Login",
-    icon: mdiLock,
+    to: '/',
+    label: 'Login',
+    icon: mdiLock
   },
   {
-    to: "/error",
-    label: "Error",
-    icon: mdiAlertCircle,
+    to: '/ErrorView',
+    label: 'Error',
+    icon: mdiAlertCircle
   },
   {
-    label: "Dropdown",
+    label: 'Dropdown',
     icon: mdiViewList,
     menu: [
       {
-        label: "Item One",
+        label: 'Item One'
       },
       {
-        label: "Item Two",
-      },
-    ],
+        label: 'Item Two'
+      }
+    ]
   },
   {
-    href: "https://github.com/justboil/admin-one-vue-tailwind",
-    label: "GitHub",
+    href: 'https://github.com/justboil/admin-one-vue-tailwind',
+    label: 'GitHub',
     icon: mdiGithub,
-    target: "_blank",
+    target: '_blank'
   },
-];
+  {
+    href: 'https://github.com/justboil/admin-one-react-tailwind',
+    label: 'React version',
+    icon: mdiReact,
+    target: '_blank'
+  }
+]

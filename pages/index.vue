@@ -1,18 +1,18 @@
 <script setup>
-import { reactive } from "vue";
-import { mdiAccount, mdiAsterisk } from "@mdi/js";
+import { reactive } from 'vue'
+import { mdiAccount, mdiAsterisk } from '@mdi/js'
 
 const form = reactive({
-  login: "john.doe",
-  pass: "highly-secure-password-fYjUw-",
-  remember: true,
-});
+  login: 'john.doe',
+  pass: 'highly-secure-password-fYjUw-',
+  remember: true
+})
 
-const router = useRouter();
+const router = useRouter()
 
 const submit = () => {
-  router.push("/dashboard");
-};
+  router.push('/HomeView')
+}
 </script>
 
 <template>
@@ -49,7 +49,7 @@ const submit = () => {
           <template #footer>
             <BaseButtons>
               <BaseButton type="submit" color="info" label="Login" />
-              <BaseButton to="/dashboard" color="info" outline label="Back" />
+              <BaseButton to="/HomeView" color="info" outline label="Back" />
             </BaseButtons>
           </template>
         </CardBox>
