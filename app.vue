@@ -1,6 +1,6 @@
 <script setup>
-import { useStyleStore } from '@/stores/style.js'
-import { darkModeKey, styleKey } from '@/configs/config.js'
+// import { useDarkModeStore } from '@/stores/darkMode.js'
+// import { darkModeKey } from '@/configs/config.js'
 
 useHead({
   titleTemplate: (titleChunk) => {
@@ -10,25 +10,25 @@ useHead({
   }
 })
 
-const styleStore = useStyleStore()
+// const darkModeStore = useDarkModeStore()
 
-const currentStyle = typeof localStorage !== 'undefined' && localStorage[styleKey]
-    ? localStorage[styleKey]
-    : 'basic'
+// const currentStoredDarkMode =
+//   typeof localStorage !== 'undefined' && localStorage[darkModeKey] === '1'
 
-styleStore.setStyle(currentStyle)
-
-const currentStoredDarkMode = typeof localStorage !== 'undefined' && localStorage[darkModeKey] === '1'
-
-if ((!currentStoredDarkMode && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) || currentStoredDarkMode) {
-  styleStore.setDarkMode(true)
-}
+// if (
+//   (!currentStoredDarkMode &&
+//     typeof window !== 'undefined' &&
+//     window.matchMedia('(prefers-color-scheme: dark)').matches) ||
+//   currentStoredDarkMode
+// ) {
+//   darkModeStore.set(true)
+// }
 </script>
 
 <template>
   <div>
     <NuxtLayout>
-      <NuxtPage/>
+      <NuxtPage />
     </NuxtLayout>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <script setup>
-import { computed, ref, onMounted } from "vue";
-import { useMainStore } from "@/stores/main";
+import { computed, ref, onMounted } from 'vue'
+import { useMainStore } from '@/stores/main'
 import {
   mdiAccountMultiple,
   mdiCartOutline,
@@ -8,37 +8,33 @@ import {
   mdiMonitorCellphone,
   mdiReload,
   mdiGithub,
-  mdiChartPie,
-} from "@mdi/js";
-import { sampleChartData } from "@/components/Charts/chart.config.js";
-import LineChart from "@/components/Charts/LineChart.vue";
+  mdiChartPie
+} from '@mdi/js'
+import * as chartConfig from '@/components/Charts/chart.config.js'
+import LineChart from '@/components/Charts/LineChart.vue'
 
-const chartData = ref(null);
+const chartData = ref(null)
 
 const fillChartData = () => {
-  chartData.value = sampleChartData();
-};
+  chartData.value = chartConfig.sampleChartData()
+}
 
 onMounted(() => {
-  fillChartData();
-});
+  fillChartData()
+})
 
-const mainStore = useMainStore();
+const mainStore = useMainStore()
 
-const clientBarItems = computed(() => mainStore.clients.slice(0, 4));
+const clientBarItems = computed(() => mainStore.clients.slice(0, 4))
 
-const transactionBarItems = computed(() => mainStore.history);
+const transactionBarItems = computed(() => mainStore.history)
 </script>
 
 <template>
   <div>
     <NuxtLayout name="authenticated">
       <SectionMain>
-        <SectionTitleLineWithButton
-          :icon="mdiChartTimelineVariant"
-          title="Overview"
-          main
-        >
+        <SectionTitleLineWithButton :icon="mdiChartTimelineVariant" title="Overview" main>
           <BaseButton
             href="https://github.com/justboil/admin-one-vue-tailwind"
             target="_blank"
@@ -107,11 +103,7 @@ const transactionBarItems = computed(() => mainStore.history);
         <SectionBannerStarOnGitHub class="mt-6 mb-6" />
 
         <SectionTitleLineWithButton :icon="mdiChartPie" title="Trends overview">
-          <BaseButton
-            :icon="mdiReload"
-            color="whiteDark"
-            @click="fillChartData"
-          />
+          <BaseButton :icon="mdiReload" color="whiteDark" @click="fillChartData" />
         </SectionTitleLineWithButton>
 
         <CardBox class="mb-6">
@@ -120,10 +112,7 @@ const transactionBarItems = computed(() => mainStore.history);
           </div>
         </CardBox>
 
-        <SectionTitleLineWithButton
-          :icon="mdiAccountMultiple"
-          title="Clients"
-        />
+        <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />
 
         <NotificationBar color="info" :icon="mdiMonitorCellphone">
           <b>Responsive table.</b> Collapses on mobile

@@ -1,6 +1,6 @@
 {
   "name": "admin-one-nuxt-tailwind",
-  "version": "3.2.0",
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -9,15 +9,16 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@mdi/js": "^7.2.96",
-    "@pinia/nuxt": "^0.4.9",
-    "chart.js": "^4.3.0",
+    "@mdi/js": "^7.4.47",
+    "@pinia/nuxt": "^0.5.1",
+    "chart.js": "^4.4.1",
     "numeral": "^2.0.6",
-    "nuxt": "^3.4.3",
-    "tailwindcss": "^3.3.2"
+    "nuxt": "^3.10.1",
+    "vue": "^3.4.15",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.6.7",
-    "@tailwindcss/forms": "^0.5.3"
+    "@nuxtjs/tailwindcss": "^6.11.3",
+    "@tailwindcss/forms": "^0.5.7"
   }
 }

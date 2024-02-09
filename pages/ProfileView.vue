@@ -1,34 +1,28 @@
 <script setup>
-import { reactive } from "vue";
-import { useMainStore } from "@/stores/main";
-import {
-  mdiAccount,
-  mdiMail,
-  mdiAsterisk,
-  mdiFormTextboxPassword,
-  mdiGithub,
-} from "@mdi/js";
+import { reactive } from 'vue'
+import { useMainStore } from '@/stores/main'
+import { mdiAccount, mdiMail, mdiAsterisk, mdiFormTextboxPassword, mdiGithub } from '@mdi/js'
 
-const mainStore = useMainStore();
+const mainStore = useMainStore()
 
 const profileForm = reactive({
   name: mainStore.userName,
-  email: mainStore.userEmail,
-});
+  email: mainStore.userEmail
+})
 
 const passwordForm = reactive({
-  password_current: "",
-  password: "",
-  password_confirmation: "",
-});
+  password_current: '',
+  password: '',
+  password_confirmation: ''
+})
 
 const submitProfile = () => {
-  mainStore.setUser(profileForm);
-};
+  mainStore.setUser(profileForm)
+}
 
 const submitPass = () => {
   //
-};
+}
 </script>
 
 <template>
@@ -84,10 +78,7 @@ const submitPass = () => {
           </CardBox>
 
           <CardBox is-form @submit.prevent="submitPass">
-            <FormField
-              label="Current password"
-              help="Required. Your current password"
-            >
+            <FormField label="Current password" help="Required. Your current password">
               <FormControl
                 v-model="passwordForm.password_current"
                 :icon="mdiAsterisk"
@@ -111,10 +102,7 @@ const submitPass = () => {
               />
             </FormField>
 
-            <FormField
-              label="Confirm password"
-              help="Required. New password one more time"
-            >
+            <FormField label="Confirm password" help="Required. New password one more time">
               <FormControl
                 v-model="passwordForm.password_confirmation"
                 :icon="mdiFormTextboxPassword"

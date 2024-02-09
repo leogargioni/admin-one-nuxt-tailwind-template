@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <div>
     <NuxtLayout>
@@ -15,7 +11,7 @@
 
           <template #footer>
             <BaseButtons>
-              <BaseButton label="Done" to="/dashboard" color="danger" />
+              <BaseButton label="Done" to="/HomeView" color="danger" />
             </BaseButtons>
           </template>
         </CardBox>
